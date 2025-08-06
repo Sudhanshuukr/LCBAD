@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { stories } from "../data/stories";
-import StoryCard from "../components/StoryCard";
+import StoryCardWithReviews from "../components/StoryCardWithReviews";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Book, ChevronDown, ChevronUp, Zap, Sparkles } from "lucide-react";
@@ -100,7 +100,7 @@ const Stories = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 slide-in-up">
                   {categoryStories.map((story, storyIndex) => (
                     <div key={story.id} className="fade-in-stagger" style={{animationDelay: `${storyIndex * 0.1}s`}}>
-                      <StoryCard story={story} />
+                      <StoryCardWithReviews story={story} />
                     </div>
                   ))}
                 </div>

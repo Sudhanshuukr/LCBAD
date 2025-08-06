@@ -8,6 +8,7 @@ import { ArrowLeft, Book, Plus, Minus, Type, Lock } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import ReviewsSection from "../components/ReviewsSection";
 
 const StoryReader = () => {
   const { storyId } = useParams<{ storyId: string }>();
@@ -193,7 +194,7 @@ const StoryReader = () => {
           </div>
 
           {/* Story Content */}
-          <div className="glass-card rounded-lg p-8">
+          <div className="glass-card rounded-lg p-8 mb-8">
             <h2 className="text-2xl font-bold mb-6 text-white cyberpunk-text">Full Story</h2>
             <div className="prose prose-lg max-w-none">
               {story.content.split('\n\n').map((paragraph, index) => (
@@ -207,6 +208,9 @@ const StoryReader = () => {
               ))}
             </div>
           </div>
+
+          {/* Reviews Section */}
+          <ReviewsSection storyId={storyId!} />
         </div>
       </main>
       
